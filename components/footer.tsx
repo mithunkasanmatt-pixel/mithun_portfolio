@@ -83,7 +83,7 @@ export default function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
+                className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-purple-200/60"
               >
                 <Github size={18} />
               </a>
@@ -91,13 +91,13 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
+                className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-purple-200/60"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="mailto:mithunkasan@gmail.com"
-                className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
+                className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-purple-200/60"
               >
                 <Mail size={18} />
               </a>
@@ -105,7 +105,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
+                className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors border border-purple-200/60"
               >
                 <Twitter size={18} />
               </a>

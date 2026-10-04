@@ -1,12 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import WhatsappFloat from "@/components/WhatsappFloat"
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Mithunkumar.C - Web Developer | React, Next.js, TypeScript | Full-Stack Developer Portfolio",
@@ -56,9 +52,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
+    <html lang="en" className="scroll-smooth light">
       <head>
-        <meta name="theme-color" content="#1a0a2e" />
+        <meta name="theme-color" content="#faf5ff" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="author" content="Mithunkumar.C" />
         <meta

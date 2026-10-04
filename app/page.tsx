@@ -5,10 +5,12 @@ import Services from "@/components/skills"
 import Projects from "@/components/projects"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import IntroLoader from "@/components/intro-loader"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+      <IntroLoader />
       <Navigation />
       <Hero />
       <div className="relative z-20 bg-background">

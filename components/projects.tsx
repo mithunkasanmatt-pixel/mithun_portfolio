@@ -252,13 +252,13 @@ export default function Projects() {
       <div className="lg:sticky lg:top-0 z-10 flex min-h-screen max-w-7xl flex-col justify-center mx-auto px-4 py-12 sm:px-6 lg:px-8 md:py-20">
         <ScrollReveal variant="slide-up">
           <div className="text-center mb-10 md:mb-14">
-            <span className="text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2 inline-block px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+            <span className="text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2 inline-block px-3 py-1 bg-purple-100 rounded-full border border-purple-200">
               Portfolio Showcase
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-purple-900 to-purple-700">
               Featured Projects
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
               Explore my latest work including AI automation, matrimony platforms, full-stack applications, and business dashboards.
             </p>
           </div>
@@ -302,7 +302,7 @@ export default function Projects() {
           <div className="flex justify-center mt-6 md:mt-10">
             <a
               href="#contact"
-              className="px-8 py-3.5 bg-gradient-to-r from-purple-600 via-primary to-pink-600 text-white rounded-full font-semibold hover:opacity-95 hover:scale-105 transition-all duration-300 flex items-center gap-2.5 shadow-xl shadow-purple-900/30"
+              className="px-8 py-3.5 bg-gradient-to-r from-purple-700 via-primary to-indigo-700 text-white rounded-full font-semibold hover:opacity-95 hover:scale-105 transition-all duration-300 flex items-center gap-2.5 shadow-xl shadow-purple-500/20"
             >
               Get In Touch For Projects
               <ArrowRight size={18} />

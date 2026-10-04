@@ -1,99 +1,7 @@
-// "use client"
-
-// import { useState } from "react"
-// import Link from "next/link"
-// import { Menu, X } from "lucide-react"
-
-// export default function Navigation() {
-//   const [isOpen, setIsOpen] = useState(false)
-
-//   const navItems = [
-//     { label: "Home", href: "#home" },
-//     { label: "About", href: "#about" },
-//     { label: "Services", href: "#services" },
-//     { label: "Projects", href: "#projects" },
-//     { label: "Contact", href: "#contact" },
-//   ]
-
-//   return (
-//     <nav className="fixed top-0 w-full z-50 glass border-b">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-16">
-//           {/* Logo */}
-//           <Link href="/" className="text-2xl font-bold gradient-text">
-//             MC
-//           </Link>
-
-//           {/* Desktop Menu */}
-//           <div className="hidden md:flex gap-8">
-//             {navItems.map((item) => (
-//               <a
-//                 key={item.label}
-//                 href={item.href}
-//                 className="text-sm font-medium hover:text-primary transition-colors duration-200"
-//               >
-//                 {item.label}
-//               </a>
-//             ))}
-//           </div>
-
-//           {/* CTA Button */}
-//           <div className="hidden md:block">
-//             <a
-//               href="#contact"
-//               className="px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
-//             >
-//               Contact Us
-//             </a>
-//           </div>
-
-//           {/* Mobile Menu Button */}
-//           <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground">
-//             {isOpen ? <X size={24} /> : <Menu size={24} />}
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu */}
-//         {isOpen && (
-//           <div className="md:hidden pb-4 space-y-2">
-//             {navItems.map((item) => (
-//               <a
-//                 key={item.label}
-//                 href={item.href}
-//                 className="block px-4 py-2 text-sm hover:text-primary transition-colors"
-//                 onClick={() => setIsOpen(false)}
-//               >
-//                 {item.label}
-//               </a>
-//             ))}
-//             <a
-//               href="#contact"
-//               className="block px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold text-center"
-//               onClick={() => setIsOpen(false)}
-//             >
-//               Contact Us
-//             </a>
-//           </div>
-//         )}
-//       </div>
-//     </nav>
-//   )
-// }
-
-
-
-
-
-
-
-
-
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Code2 } from "lucide-react"
-
-import Image from "next/image"
+import { Menu, X } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -110,152 +18,88 @@ export default function Navigation() {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
+    { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ]
 
   return (
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 glass border-b ${
-        scrolled ? 'shadow-lg shadow-purple-950/20 bg-background/90 backdrop-blur-md' : 'bg-background/70 backdrop-blur-md'
+      className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white border-b border-slate-200 ${
+        scrolled ? 'shadow-md shadow-slate-200/50' : ''
       }`}
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex justify-between items-center h-16 md:h-20">
-          {/* Logo with animation */}
-          <a 
-            href="#home" 
-            className="flex items-center gap-3 group py-2"
-            aria-label="Mithunkumar.C Portfolio Logo"
-          >
-            <div className="relative flex items-center">
-              <Image 
-                src="/logo.png"
-                alt="Mithunkumar.C Logo"
-                width={160}
-                height={50}
-                className="h-9 sm:h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(147,51,234,0.3)]"
-                priority
-              />
-            </div>
-          </a>
+          {/* Target Navbar Slot for Docking MITHUNKUMAR Morphing Text */}
+          <div id="navbar-logo-slot" className="h-10 flex items-center min-w-[140px] sm:min-w-[200px]" />
 
-          {/* Desktop Menu with animations */}
-          <div className="hidden md:flex gap-1 lg:gap-2">
-            {navItems.map((item, index) => (
+          {/* Desktop Menu - Black & White Theme */}
+          <div className="hidden md:flex gap-1 lg:gap-3">
+            {navItems.map((item) => (
               <a
                 key={item.label}
+                id={item.label === "About" ? "nav-item-about" : undefined}
                 href={item.href}
-                className="relative px-4 py-2 text-sm font-medium hover:text-primary transition-all duration-300 group"
-                style={{
-                  animation: `fadeInDown 0.5s ease-out ${index * 0.1}s both`
-                }}
+                className="relative px-4 py-2 text-sm lg:text-base font-bold text-black hover:text-slate-600 transition-all duration-200 group"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
 
-          {/* CTA Button with animation */}
+          {/* CTA Button - Black & White */}
           <div className="hidden md:block">
             <a
               href="#contact"
-              className="relative px-6 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-semibold overflow-hidden group transition-all duration-300 hover:shadow-lg hover:scale-105"
+              className="px-6 py-2.5 bg-black text-white rounded-full text-sm sm:text-base font-bold hover:bg-slate-800 hover:scale-105 transition-all duration-300 shadow-sm inline-block"
             >
-              <span className="relative z-10">Contact Us</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              Contact Us
             </a>
           </div>
 
-          {/* Mobile Menu Button with animation */}
+          {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="md:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors duration-200 hover:bg-gray-100 rounded-lg"
+            className="md:hidden p-2 text-black hover:bg-slate-100 rounded-lg transition-colors duration-200"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
           >
-            {isOpen ? (
-              <X size={24} className="animate-spin-once" />
-            ) : (
-              <Menu size={24} />
-            )}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu with slide animation */}
+        {/* Mobile Menu */}
         <div 
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white ${
+            isOpen ? 'max-h-96 opacity-100 pb-4 border-t border-slate-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="pb-4 pt-2 space-y-1">
-            {navItems.map((item, index) => (
+          <div className="pt-2 space-y-1">
+            {navItems.map((item) => (
               <a
                 key={item.label}
+                id={item.label === "About" ? "nav-item-about-mobile" : undefined}
                 href={item.href}
-                className="block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-200 transform hover:translate-x-2"
+                className="block px-4 py-3 text-sm font-bold text-black hover:bg-slate-100 rounded-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
-                style={{
-                  animation: isOpen ? `slideInRight 0.3s ease-out ${index * 0.05}s both` : 'none'
-                }}
               >
                 {item.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="block mx-4 mt-3 px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-semibold text-center hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+              className="block mx-4 mt-3 px-4 py-3 bg-black text-white rounded-full text-sm font-bold text-center hover:bg-slate-800 transition-all duration-200"
               onClick={() => setIsOpen(false)}
-              style={{
-                animation: isOpen ? `slideInRight 0.3s ease-out ${navItems.length * 0.05}s both` : 'none'
-              }}
             >
               Contact Us
             </a>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes spin-once {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(90deg);
-          }
-        }
-
-        .animate-spin-once {
-          animation: spin-once 0.3s ease-out;
-        }
-      `}</style>
     </nav>
   )
 }
